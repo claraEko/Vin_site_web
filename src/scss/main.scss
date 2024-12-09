@@ -38,7 +38,6 @@ a {
 }
 body {
   background: var(--CREAM_01, #fff4e6);
-  padding: auto;
 }
 
 // PAGE_HOME
@@ -416,3 +415,33 @@ body {
   font-weight: 400;
   line-height: normal;
 }
+
+// PAGE_VIN_BLANC
+
+.navigation-02 {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 12px;
+  margin-top: 31px;
+}
+
+.nav-02 {
+  color: var(--RED_02, #91172c);
+  font-family: Montserrat;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.38px;
+  text-transform: uppercase;
+}
+
+.page-act {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.triangle {
+  rotate: 90deg;
+}
+
+// finir la nav et la resposibiliter et remettre le footer
