@@ -1,22 +1,22 @@
 $container-max-widths: (
   sm: 540px,
   md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1500px,
+  lg: 1200px,
+  xl: 1400px,
+  xxl: 1900px,
 );
 @import "bootstrap/scss/bootstrap-grid";
-// .row + .row {
-//   margin-top: 16px;
-// }
+.row + .row {
+  margin-top: 16px;
+}
 
-// .row > .col,
-// .row > [class^="col-"] {
-//   padding-top: 12px;
-//   padding-bottom: 12px;
-//   background-color: rgba(86, 61, 124, 0.15);
-//   border: 1px solid rgba(86, 61, 124, 0.2);
-// }
+.row > .col,
+.row > [class^="col-"] {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: rgba(86, 61, 124, 0.15);
+  border: 1px solid rgba(86, 61, 124, 0.2);
+}
 
 * {
   box-sizing: border-box;
@@ -38,6 +38,7 @@ a {
 }
 body {
   background: var(--CREAM_01, #fff4e6);
+  padding: auto;
 }
 .banner {
   background: url("../IMG/header.png") lightgray 50% / cover no-repeat;
@@ -62,6 +63,16 @@ body {
   line-height: normal;
   text-transform: uppercase;
 }
+@media (min-width: 1000px) and (max-width: 1400px) {
+  .titre-01 {
+    font-size: 80px;
+  }
+}
+@media (min-width: 1835px) and (max-width: 2000px) {
+  .titre-01 {
+    font-size: 100px;
+  }
+}
 .button-01 {
   display: flex;
   padding: 25px 20px;
@@ -74,21 +85,20 @@ body {
   font-size: 24px;
   font-weight: 400;
 }
-@media (min-width: 1000px) and (max-width: 1400px) {
-  .titre-01 {
-    font-size: 80px;
-  }
-}
+
 @media (min-width: 1000px) and (max-width: 1400px) {
   .button-01 {
     font-size: 18px;
   }
 }
+
 .all-nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .nav-01 {
   display: flex;
@@ -128,25 +138,36 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 28px;
-
+  transform: translateX(-17%);
   background: #fff;
+  margin-top: 50px;
 }
-@media (min-width: 1000px) and (max-width: 1400px) {
-  .texte-home {
-    font-size: 10px;
-    color: #000;
-  }
-}
-// le media corise ne marche pas
+
 .img-contenu-01 {
-  margin-top: 20%;
+  margin-top: 50px;
 }
+.contenu-02 {
+  display: flex;
+  padding: 50px;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  transform: translateX(17%);
+  background: #fff;
+  margin-top: 50px;
+}
+
 .texte-home {
   color: var(--RED_03, #5c1414);
   text-align: center;
   font-family: "Playfair Display";
   font-size: 28px;
   font-weight: 400;
+}
+@media (min-width: 1000px) and (max-width: 1400px) {
+  .texte-home {
+    font-size: 22px;
+  }
 }
 
 .button-02 {
@@ -165,6 +186,12 @@ body {
   gap: 10px;
   border-bottom: 1px solid rgba(166, 25, 40, 0.33);
 }
+@media (min-width: 1000px) and (max-width: 1400px) {
+  .button-02 {
+    font-size: 10 px;
+  }
+}
+
 .footer {
   background-color: aqua;
 }
