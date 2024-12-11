@@ -420,19 +420,24 @@ body {
 
 .navigation-02 {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: start;
   gap: 12px;
   margin-top: 31px;
+  margin-left: 40px;
 }
 
-.nav-02 {
+.nav-04 {
   color: var(--RED_02, #91172c);
   font-family: Montserrat;
   font-size: 19px;
   font-weight: 500;
   letter-spacing: -0.38px;
   text-transform: uppercase;
+  gap: 12px;
+  display: flex;
+  justify-content: left;
+  align-items: start;
 }
 
 .page-act {
@@ -443,5 +448,41 @@ body {
 .triangle {
   rotate: 90deg;
 }
-
-// finir la nav et la resposibiliter et remettre le footer
+.vin-red {
+  margin-top: 160px;
+}
+.titre-04 {
+  margin-top: 150px;
+}
+.ptitre {
+  color: rgba(166, 25, 40, 0.8);
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.38px;
+  text-transform: uppercase;
+}
+.gtitre {
+  color: var(--RED_02, #91172c);
+  font-family: "Playfair Display";
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.article-red-01 {
+  color: var(--RED_03, #5c1414);
+  font-family: Montserrat;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.article-red-02 {
+  color: var(--RED_03, #5c1414);
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 30px;
+}
