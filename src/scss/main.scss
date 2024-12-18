@@ -86,12 +86,19 @@ body {
   font-family: Montserrat;
   font-size: 24px;
   font-weight: 400;
+
+  transition-duration: 0.25s;
 }
 
 @media (min-width: 1000px) and (max-width: 1400px) {
   .button-01 {
     font-size: 18px;
   }
+}
+.button-01:hover {
+  border: 3px solid var(--CREAM_01, #fff4e6);
+  background: var(--CREAM_01, #fff4e6);
+  color: var(--RED_02, #91172c);
 }
 
 .all-nav {
@@ -135,7 +142,41 @@ body {
   width: 28.768px;
   height: 27.588px;
 }
+.navigation-01 {
+  display: inline-block;
+  position: relative;
+}
+.navigation-01::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #91172c;
+  transition: transform 0.25s ease-out;
+}
+.navigation-01:hover::after {
+  transform: scaleX(1);
+}
+.navigation-01.left::after {
+  transform-origin: bottom right;
+}
 
+.navigation-01.left:hover::after {
+  transform-origin: bottom left;
+}
+// .navigation-01:hover {
+//   letter-spacing: -0.38px;
+//   text-decoration-line: underline;
+//   text-decoration-style: solid;
+//   text-decoration-skip-ink: none;
+//   text-decoration-thickness: auto;
+//   text-underline-offset: auto;
+//   text-underline-position: from-font;
+//   text-transform: uppercase;
+// }
 .contenu {
   display: flex;
   padding: 50px;
@@ -195,6 +236,15 @@ body {
     font-size: 10 px;
   }
 }
+.button-02:hover {
+  border: 1px solid rgba(166, 25, 40, 0.33);
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+// probleme avec le bouton nodifier animation
 .contenue-04 {
   display: flex;
   padding: 50px;
@@ -438,8 +488,36 @@ body {
   display: flex;
   justify-content: left;
   align-items: start;
+  display: inline-block;
+  position: relative;
 }
 
+.nav-04::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(145, 23, 44, 0.45);
+  transition: transform 0.25s ease-out;
+}
+.nav-04:hover::after {
+  transform: scaleX(1);
+}
+.nav-04.left::after {
+  transform-origin: bottom right;
+}
+
+.nav-04.left:hover::after {
+  transform-origin: bottom left;
+}
+// .nav-04:hover {
+//   border-bottom: 2px solid rgba(145, 23, 44, 0.45);
+//   padding-bottom: 2px;
+//   gap: 10px;
+// }
 .page-act {
   display: flex;
   align-items: center;
@@ -572,6 +650,28 @@ body {
     gap: 5px;
   }
 }
+.shop-red-01 {
+  display: block;
+}
+.shop-red-02 {
+  display: none;
+}
+.button-shop-01:hover {
+  border-radius: 2px;
+  border: 3px solid #a61928cc;
+  background-color: #a61928;
+}
+// probleme avec le bouton
+.button-shop-01:hover .texte-button-01 {
+  color: rgba(254, 228, 200, 0.8);
+}
+.button-shop-01:hover .shop-red-01 {
+  display: none;
+}
+.button-shop-01:hover .shop-red-02 {
+  display: block;
+}
+
 .button-autre-colec {
   color: var(--RED_01, #a61928);
   text-align: center;
@@ -587,15 +687,20 @@ body {
   margin-bottom: 147px;
   margin-top: 130px;
 }
+
 .but {
   display: flex;
   display: inline-flex;
-  padding-bottom: 10px;
+  padding: 10px;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid rgba(166, 25, 40, 0.33);
+  border-bottom: solid rgba(166, 25, 40, 0.33);
+}
+.but:hover {
+  border: solid rgba(166, 25, 40, 0.33);
 }
 
+// probleme avec le bouton nodifier animation
 @media (min-width: 1000px) and (max-width: 1300px) {
   .button-autre-colec {
     margin-top: 10px;
@@ -646,6 +751,30 @@ body {
   font-weight: 500;
   letter-spacing: -0.38px;
   text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+}
+
+.navigation-03::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: (#fee4c8);
+  transition: transform 0.25s ease-out;
+}
+.navigation-03:hover::after {
+  transform: scaleX(1);
+}
+.navigation-03.left::after {
+  transform-origin: bottom right;
+}
+
+.navigation-03.left:hover::after {
+  transform-origin: bottom left;
 }
 .Logo-white .navigation-02 {
   display: flex;
@@ -655,7 +784,12 @@ body {
   margin-top: 31px;
   margin-left: 40px;
 }
-
+.nav-09 {
+  gap: 12px;
+  display: flex;
+  justify-content: left;
+  align-items: start;
+}
 .nav-08 {
   color: #fee4c8;
   font-family: Montserrat;
@@ -663,10 +797,29 @@ body {
   font-weight: 500;
   letter-spacing: -0.38px;
   text-transform: uppercase;
-  gap: 12px;
-  display: flex;
-  justify-content: left;
-  align-items: start;
+  display: inline-block;
+  position: relative;
+}
+.nav-08::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(254, 228, 200, 0.37);
+  transition: transform 0.25s ease-out;
+}
+.nav-08:hover::after {
+  transform: scaleX(1);
+}
+.nav-08.left::after {
+  transform-origin: bottom right;
+}
+
+.nav-08.left:hover::after {
+  transform-origin: bottom left;
 }
 
 .page-act {
@@ -773,7 +926,12 @@ body {
   margin-top: 64px;
   margin-bottom: 180px;
 }
-
+.shop-white-02 {
+  display: block;
+}
+.shop-white-03 {
+  display: none;
+}
 .texte-button-02 {
   color: rgba(254, 228, 200, 0.8);
   text-align: center;
@@ -801,6 +959,20 @@ body {
     gap: 5px;
   }
 }
+.button-shop-02:hover {
+  border-radius: 2px;
+  border: 3px solid #fee4c8;
+  background-color: #fee4c8;
+}
+.button-shop-02:hover .texte-button-02 {
+  color: #a61928;
+}
+.button-shop-02:hover .shop-white-02 {
+  display: none;
+}
+.button-shop-02:hover .shop-white-03 {
+  display: block;
+}
 .button-autre-colec-02 {
   color: var(--CREAM_02, #fee4c8);
   text-align: center;
@@ -816,13 +988,16 @@ body {
   margin-bottom: 147px;
   margin-top: 130px;
 }
-.but {
+.but-red {
   display: flex;
   display: inline-flex;
-  padding-bottom: 10px;
+  padding: 10px;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid rgba(254, 228, 200, 0.6);
+}
+.but-red:hover {
+  border: 1px solid rgba(254, 228, 200, 0.6);
 }
 
 @media (min-width: 1000px) and (max-width: 1300px) {
