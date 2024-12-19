@@ -26,6 +26,7 @@ $container-max-widths: (
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 img,
@@ -33,9 +34,7 @@ video {
   display: block;
   max-width: 100%;
 }
-a {
-  text-decoration: none;
-}
+
 body {
   background: var(--CREAM_01, #fff4e6);
 }
@@ -138,9 +137,80 @@ body {
   align-items: center;
   gap: 21px;
 }
+.nav-03.burger {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 21px;
+}
 .img-nav {
   width: 28.768px;
   height: 27.588px;
+}
+ul {
+  list-style: none;
+}
+
+.menu {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  display: flex;
+  width: 520px;
+  height: 468px;
+  padding: 18px 64px 64px 58px;
+  align-items: flex-start;
+  gap: 153px;
+  flex-shrink: 0;
+  border-radius: 3px 3px 3px 86px;
+  background: var(--RED_02, #91172c);
+  z-index: 1;
+  opacity: 0; /* par défaut, le menu a une opacité de 0 */
+  pointer-events: none; /* par défaut, le menu ne peut pas être cliqué */
+  transition: opacity 0.3s; /* on ajoute une transition pour que l'ouverture se fasse de façon fluide */
+}
+.menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.cross-01 {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  top: 50px;
+  right: 35px;
+}
+.men {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 70px;
+}
+ul {
+  display: flex;
+  width: 260px;
+  padding-top: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+.bb {
+  color: var(--CREAM_01, #fff4e6);
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  align-self: stretch;
+}
+.res {
+  display: flex;
+  width: 184px;
+  height: 53px;
+  align-items: flex-start;
+  gap: 17px;
 }
 .navigation-01 {
   display: inline-block;
@@ -229,21 +299,44 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  border-bottom: 1px solid rgba(166, 25, 40, 0.33);
+  display: inline-block;
+  position: relative;
 }
 @media (min-width: 1000px) and (max-width: 1400px) {
   .button-02 {
     font-size: 10 px;
   }
 }
-.button-02:hover {
-  border: 1px solid rgba(166, 25, 40, 0.33);
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+
+.button-02::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #91172c;
+  transition: transform 0.25s ease-out;
 }
+.button-02:hover::after {
+  transform: scaleX(1);
+}
+.button-02.left::after {
+  transform-origin: bottom right;
+}
+
+.button-02.left:hover::after {
+  transform-origin: bottom left;
+}
+// .button-02:hover {
+//   border: 1px solid rgba(166, 25, 40, 0.33);
+//   display: flex;
+//   padding: 10px;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 10px;
+// }
 // probleme avec le bouton nodifier animation
 .contenue-04 {
   display: flex;
@@ -442,6 +535,17 @@ body {
   flex-direction: column;
   gap: 5px;
   margin-top: 103px;
+}
+.lang {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.lang img {
+  display: none;
+}
+.lang.is-active img {
+  display: block;
 }
 .credit {
   display: flex;
@@ -681,24 +785,49 @@ body {
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 147px;
   margin-top: 130px;
+  position: relative;
 }
-
+.bu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .but {
   display: flex;
   display: inline-flex;
   padding: 10px;
   justify-content: center;
   align-items: center;
-  border-bottom: solid rgba(166, 25, 40, 0.33);
 }
-.but:hover {
-  border: solid rgba(166, 25, 40, 0.33);
+.button-autre-colec::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #91172c;
+  transition: transform 0.25s ease-out;
 }
+.button-autre-colec:hover::after {
+  transform: scaleX(1);
+}
+.button-autre-colec.left::after {
+  transform-origin: bottom right;
+}
+
+.button-autre-colec.left:hover::after {
+  transform-origin: bottom left;
+}
+// .but:hover {
+//   border: solid rgba(166, 25, 40, 0.33);
+// }
 
 // probleme avec le bouton nodifier animation
 @media (min-width: 1000px) and (max-width: 1300px) {
@@ -754,7 +883,38 @@ body {
   display: inline-block;
   position: relative;
 }
+.menu-2 {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  display: flex;
+  width: 520px;
+  height: 468px;
+  padding: 18px 64px 64px 58px;
+  align-items: flex-start;
+  gap: 153px;
+  flex-shrink: 0;
+  border-radius: 3px 3px 3px 86px;
+  background: var(--CREAM_02, #fee4c8);
+  z-index: 1;
+  opacity: 0; /* par défaut, le menu a une opacité de 0 */
+  pointer-events: none; /* par défaut, le menu ne peut pas être cliqué */
+  transition: opacity 0.3s; /* on ajoute une transition pour que l'ouverture se fasse de façon fluide */
+}
+.menu-2.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
 
+.b {
+  color: var(--RED_01, #a61928);
+  font-family: Montserrat;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  align-self: stretch;
+}
 .navigation-03::after {
   content: "";
   position: absolute;
@@ -982,11 +1142,17 @@ body {
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 147px;
   margin-top: 130px;
+  position: relative;
+}
+.bu-red {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .but-red {
   display: flex;
@@ -994,11 +1160,31 @@ body {
   padding: 10px;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid rgba(254, 228, 200, 0.6);
 }
-.but-red:hover {
-  border: 1px solid rgba(254, 228, 200, 0.6);
+.button-autre-colec-02::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fee4c899;
+  transition: transform 0.25s ease-out;
 }
+.button-autre-colec-02:hover::after {
+  transform: scaleX(1);
+}
+.button-autre-colec-02.left::after {
+  transform-origin: bottom right;
+}
+
+.button-autre-colec-02.left:hover::after {
+  transform-origin: bottom left;
+}
+// .but-red:hover {
+//   border: 1px solid rgba(254, 228, 200, 0.6);
+// }
 
 @media (min-width: 1000px) and (max-width: 1300px) {
   .button-autre-colec-02 {
@@ -1180,6 +1366,17 @@ body {
   flex-direction: column;
   gap: 5px;
   margin-top: 103px;
+}
+.langr img {
+  display: none;
+}
+.langr {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.langr.is-active img {
+  display: block;
 }
 .credit {
   display: flex;
