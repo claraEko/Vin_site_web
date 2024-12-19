@@ -29,6 +29,7 @@ var toggleMenu = function toggleMenu() {
 
 burger.addEventListener("click", toggleMenu);
 close.addEventListener("click", toggleMenu);
+
 var burger = document.querySelector(".burger");
 var menu = document.querySelector(".menu-2");
 var close = document.querySelector(".cross");
